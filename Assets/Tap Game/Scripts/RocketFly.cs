@@ -21,7 +21,7 @@ public class Fly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Pointer.current.press.wasPressedThisFrame == true)
         {
             rb.linearVelocity = Vector2.up * velocity;
         }
