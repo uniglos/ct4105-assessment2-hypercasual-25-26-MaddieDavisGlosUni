@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ShootBullet : MonoBehaviour
 {
+    public GameObject explosionPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +20,7 @@ public class ShootBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Debug.Log("Collided");
             Destroy(collision.gameObject);
             //Destroy(gameObject);        

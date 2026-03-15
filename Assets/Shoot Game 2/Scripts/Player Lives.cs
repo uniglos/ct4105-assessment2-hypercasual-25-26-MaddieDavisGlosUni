@@ -4,7 +4,9 @@ using UnityEngine.UI;
 public class PlayerLives : MonoBehaviour
 {
     public int lives = 3;
+    public float zOffset = 1;
     public Image[] livesUI;
+    public GameObject explosionPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +24,7 @@ public class PlayerLives : MonoBehaviour
     {
         if(collision.collider.gameObject.tag == "Enemy")
         {
+            Instantiate(explosionPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + zOffset ), Quaternion.identity);
             Destroy(collision.collider.gameObject);
             lives -= 1;
             for (int i = 0; i < livesUI.Length; i++)
