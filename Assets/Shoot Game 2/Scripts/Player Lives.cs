@@ -44,6 +44,7 @@ public class PlayerLives : MonoBehaviour
             if(lives <= 0)
             {
                 Destroy(gameObject);
+                GameManagerShoot.instance.GameOver();
             }
         }
     }

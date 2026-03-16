@@ -3,11 +3,12 @@ using UnityEngine;
 public class ShootBullet : MonoBehaviour
 {
     public GameObject explosionPrefab;
+    private PointManager pointManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        pointManager = GameObject.Find("Point Manager").GetComponent<PointManager>();
     }
 
     // Update is called once per frame
@@ -21,8 +22,8 @@ public class ShootBullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Debug.Log("Collided");
             Destroy(collision.gameObject);
+            pointManager.UpdateScore(10);
             //Destroy(gameObject);        
         }
 
