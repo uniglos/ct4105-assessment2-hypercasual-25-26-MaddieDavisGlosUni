@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boundary
   - Enemy
+  - Fish
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Floor
   - Water
   - UI
-  - 
+  - Death
   - 
   - 
   - 
