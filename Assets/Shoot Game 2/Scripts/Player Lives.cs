@@ -7,11 +7,12 @@ public class PlayerLives : MonoBehaviour
     public float zOffset = 1;
     public Image[] livesUI;
     public GameObject explosionPrefab;
+    public AudioSource hit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        hit = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class PlayerLives : MonoBehaviour
         if(collision.collider.gameObject.tag == "Enemy")
         {
             Instantiate(explosionPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + zOffset ), Quaternion.identity);
+            hit.Play();
             Destroy(collision.collider.gameObject);
             lives -= 1;
             for (int i = 0; i < livesUI.Length; i++)

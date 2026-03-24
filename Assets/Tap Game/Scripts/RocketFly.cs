@@ -8,6 +8,10 @@ public class Fly : MonoBehaviour
 {
     [SerializeField] private float velocity = 1.5f;
     [SerializeField] private float rotationSpeed = 10f;
+    public GameObject explosionPrefab;
+    public AudioSource deathAudio;
+    public AudioSource jumpAudio;
+    
 
 
     private Rigidbody2D rb;
@@ -15,6 +19,11 @@ public class Fly : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AudioSource[] sources = GetComponents<AudioSource>();
+        deathAudio = sources[0];
+        jumpAudio = sources[1];
+        //deathAudio = GetComponent<AudioSource>();
+        //jumpAudio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -23,6 +32,7 @@ public class Fly : MonoBehaviour
     {
         if (Pointer.current.press.wasPressedThisFrame == true)
         {
+            jumpAudio.Play();
             rb.linearVelocity = Vector2.up * velocity;
         }
 
@@ -36,8 +46,12 @@ public class Fly : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameManager.instance.GameOver();
-    }
+        deathAudio.Play();
+        Instantiate(explosionPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        //Debug.Log("Waiting");
+        StartCoroutine(GameManager.instance.DelayedGameOver(1));
+        
+        }
 
 
 

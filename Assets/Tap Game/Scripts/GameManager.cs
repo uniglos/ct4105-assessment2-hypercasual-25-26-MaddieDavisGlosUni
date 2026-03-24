@@ -33,4 +33,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
+
+    public IEnumerator DelayedGameOver(int delay)
+    {
+        //Debug.Log("game over");
+        yield return new WaitForSeconds(delay);
+        gameOverCanvas.SetActive(true);
+        Time.timeScale = 0f;
+
+    }
 }

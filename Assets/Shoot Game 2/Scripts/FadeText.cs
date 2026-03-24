@@ -1,19 +1,13 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class UI : MonoBehaviour
+public class FadeText : MonoBehaviour
 {
-    
+    public GameObject introText;
 
-     public void SceneLoader()
-    {
-        SceneManager.LoadScene("Shoot Variation");
-        Debug.Log("Pressed");
-    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Instantiate(introText, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity); ;
     }
 
     // Update is called once per frame
