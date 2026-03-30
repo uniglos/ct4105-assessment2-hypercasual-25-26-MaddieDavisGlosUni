@@ -9,11 +9,18 @@ public class PlayerLives : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject screenFlash;
     public AudioSource hit;
+    private GameObject cityscape;
+    private GameObject burn1;
+    private GameObject burn2;
+    public GameObject burning;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         hit = GetComponent<AudioSource>();
+        cityscape = GameObject.Find("Cityscape");
+        burn1 = GameObject.Find("Burn 1");
+        burn2 = GameObject.Find("Burn 2");
     }
 
     // Update is called once per frame
@@ -48,8 +55,22 @@ public class PlayerLives : MonoBehaviour
             if(lives <= 0)
             {
                 Destroy(gameObject);
+                Destroy(burn2);
                 GameManagerShoot.instance.GameOver();
             }
+
+            if(lives == 2)
+            {
+                Instantiate(burning, new Vector3(-15, -2, 0), Quaternion.identity);
+                Destroy(cityscape);
+            }
+            if(lives == 1)
+            {
+                Instantiate(burning, new Vector3(12, -2, 0), Quaternion.identity);
+                Instantiate(burning, new Vector3(6, -2, 0), Quaternion.identity);
+                Destroy(burn1);
+            }
+
         }
     }
 }
