@@ -5,6 +5,7 @@ public class ShootBullet : MonoBehaviour
     public GameObject explosionPrefab;
     private PointManager pointManager;
     public AudioSource source;
+    private bool audioPlayed = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,7 +25,12 @@ public class ShootBullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            source.Play();
+            //source.Play();
+            if (!audioPlayed )
+            {
+                source.Play();
+                audioPlayed = true;
+            }
             Destroy(collision.gameObject);
             pointManager.UpdateScore(10);
             //Destroy(gameObject);        

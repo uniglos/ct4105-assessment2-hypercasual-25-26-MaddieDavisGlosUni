@@ -1,15 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class UI : MonoBehaviour
+public class DestroyMe : MonoBehaviour
 {
-    
-
-     public void SceneLoader()
-    {
-        SceneManager.LoadScene("Shoot Variation");
-        //Debug.Log("Pressed");
-    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,5 +12,11 @@ public class UI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+        //Debug.Log("Explosion Destroyed");
     }
 }

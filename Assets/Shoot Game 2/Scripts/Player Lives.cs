@@ -7,6 +7,7 @@ public class PlayerLives : MonoBehaviour
     public float zOffset = 1;
     public Image[] livesUI;
     public GameObject explosionPrefab;
+    public GameObject screenFlash;
     public AudioSource hit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +29,7 @@ public class PlayerLives : MonoBehaviour
             Instantiate(explosionPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + zOffset ), Quaternion.identity);
             hit.Play();
             Destroy(collision.collider.gameObject);
+            Instantiate(screenFlash, new Vector3(0, 0, 0), Quaternion.identity);
             lives -= 1;
             for (int i = 0; i < livesUI.Length; i++)
             {  

@@ -24,5 +24,6 @@ public class EnemyMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y - yOffset, transform.position.z);
             moveSpeed *= -1;
         }
+
     }
 }
