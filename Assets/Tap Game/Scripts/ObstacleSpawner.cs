@@ -9,8 +9,7 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField] private float heightBottom = 5.0f;
     [SerializeField] private GameObject asteroids;
     [SerializeField] private GameObject[] asteroidsArray;
-    [SerializeField] private GameObject collectable;
-    [SerializeField] private float collectRange = 0.3f;
+
 
     private float timer;
     
@@ -30,10 +29,8 @@ public class AsteroidSpawner : MonoBehaviour
         {
             //SpawnAsteroids();
             SpawnAsteroidsArray();
-            SpawnCollectable();
             timer = 0;
         }
-
         
 
         timer += Time.deltaTime;
@@ -59,11 +56,5 @@ public class AsteroidSpawner : MonoBehaviour
         Destroy(asteroidArrayBelt, 10f);
     }
 
-    private void SpawnCollectable()
-    {
-        Vector3 collectPos = transform.position + new Vector3(0, Random.Range(-collectRange, collectRange));
-        GameObject collectableSpawned = Instantiate(collectable, collectPos, Quaternion.identity);
-
-        Destroy(collectableSpawned, 10f);
-    }
+    
 }

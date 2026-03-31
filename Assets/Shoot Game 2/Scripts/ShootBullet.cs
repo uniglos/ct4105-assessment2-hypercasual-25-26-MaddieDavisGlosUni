@@ -27,7 +27,7 @@ public class ShootBullet : MonoBehaviour
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             //source.Play();
             if (!audioPlayed )
-            {
+            {  
                 source.Play();
                 audioPlayed = true;
             }

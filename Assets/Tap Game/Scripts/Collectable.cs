@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Collectable : MonoBehaviour
 {
     public AudioSource collectableAudio;
+    //[SerializeField] private ParticleSystem fuelBurst;
 
     private void Start()
     {
@@ -15,8 +16,9 @@ public class Collectable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collectableAudio.Play();
-            Score.instance.UpdateScore();
+            //collectableAudio.Play();
+            //fuelBurst.Play();
+            FuelManager.instance.IncreaseFuel();
             Destroy(gameObject);    
 
         }

@@ -13,6 +13,7 @@ public class Fly : MonoBehaviour
     public AudioSource jumpAudio;
     public AudioSource collectAudio;
     [SerializeField] private ParticleSystem engineBurst;
+    //[SerializeField] private ParticleSystem fuelBurst;
     
 
 
@@ -38,6 +39,7 @@ public class Fly : MonoBehaviour
             jumpAudio.Play();
             rb.linearVelocity = Vector2.up * velocity;
             engineBurst.Play();
+            FuelManager.instance.DecreaseFuel();
         }
 
     }
@@ -46,6 +48,18 @@ public class Fly : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(0, 0, rb.linearVelocity.y * rotationSpeed);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Collectable"))
+        {
+            //fuelBurst.Play();
+            collectAudio.Play();
+            //Debug.Log("Collected");
+   
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
