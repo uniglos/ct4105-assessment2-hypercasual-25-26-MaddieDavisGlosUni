@@ -11,6 +11,8 @@ public class Fly : MonoBehaviour
     public GameObject explosionPrefab;
     public AudioSource deathAudio;
     public AudioSource jumpAudio;
+    public AudioSource collectAudio;
+    [SerializeField] private ParticleSystem engineBurst;
     
 
 
@@ -22,6 +24,7 @@ public class Fly : MonoBehaviour
         AudioSource[] sources = GetComponents<AudioSource>();
         deathAudio = sources[0];
         jumpAudio = sources[1];
+        collectAudio = sources[2];
         //deathAudio = GetComponent<AudioSource>();
         //jumpAudio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +37,7 @@ public class Fly : MonoBehaviour
         {
             jumpAudio.Play();
             rb.linearVelocity = Vector2.up * velocity;
+            engineBurst.Play();
         }
 
     }
@@ -46,12 +50,17 @@ public class Fly : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+      
+
         deathAudio.Play();
         Instantiate(explosionPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         //Debug.Log("Waiting");
         StartCoroutine(GameManager.instance.DelayedGameOver(1));
-        
-        }
+
+
+
+    }
 
 
 

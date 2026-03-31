@@ -2,22 +2,23 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class AsteroidIncreaseScore : MonoBehaviour
+public class Collectable : MonoBehaviour
 {
-    public AudioSource collectPoint;
+    public AudioSource collectableAudio;
 
     private void Start()
     {
-        collectPoint = GetComponent<AudioSource>();
+        collectableAudio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collectPoint.Play();
+            collectableAudio.Play();
             Score.instance.UpdateScore();
-            
+            Destroy(gameObject);    
+
         }
     }
 
