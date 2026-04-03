@@ -13,7 +13,7 @@ public class Fly : MonoBehaviour
     public AudioSource jumpAudio;
     public AudioSource collectAudio;
     [SerializeField] private ParticleSystem engineBurst;
-    //[SerializeField] private ParticleSystem fuelBurst;
+    [SerializeField] private ParticleSystem collectBurst;
     
 
 
@@ -54,11 +54,9 @@ public class Fly : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectable"))
         {
-            //fuelBurst.Play();
+            
             collectAudio.Play();
-            //Debug.Log("Collected");
-   
-
+            collectBurst.Play();
         }
     }
 

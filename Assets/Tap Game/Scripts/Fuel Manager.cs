@@ -29,6 +29,7 @@ public class FuelManager : MonoBehaviour
     void Start()
     {
         currentFuelText.text = fuel.ToString();
+        currentFlash = Instantiate(flashRed, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -36,12 +37,14 @@ public class FuelManager : MonoBehaviour
     {
         if (fuel <= 10 && !flashing)
         {
-            currentFlash = Instantiate(flashRed, new Vector3(0, 0, 0), Quaternion.identity);
+            
             flashing = true;
+            currentFlash.SetActive(true);
         }
         if (fuel >= 11)
         {
-            Destroy(currentFlash);
+           currentFlash.SetActive(false);
+           flashing = false;
         }
         if (fuel == 0)
         {
