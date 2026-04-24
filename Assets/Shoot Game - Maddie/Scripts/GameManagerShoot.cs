@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 public class GameManagerShoot : MonoBehaviour
 {
     public static GameManagerShoot instance;
+    public GameObject returnButton;
+    public GameObject laser;
+    public GameObject laser2;
 
     [SerializeField] private GameObject gameOverCanvas;
 
@@ -20,6 +23,9 @@ public class GameManagerShoot : MonoBehaviour
     public void GameOver()
     {
         gameOverCanvas.SetActive(true);
+        returnButton.SetActive(false);
+        laser.SetActive(false);
+        laser2.SetActive(false);
 
         Time.timeScale = 0f;
     }

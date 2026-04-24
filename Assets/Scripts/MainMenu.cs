@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
 
 void Start()
 	{
+       
     canvasGroup = mainMenuPanel.GetComponent<CanvasGroup>();
 
     if (PlayerPrefs.GetInt("Restarted", 0) == 1)
@@ -23,8 +24,9 @@ void Start()
     }
     else
     {
-        ShowMenu();
-        Time.timeScale = 0; // ✅ Pause only if it's a fresh session
+        
+        Time.timeScale = 0;
+        ShowMenu(); // ✅ Pause only if it's a fresh session
     }
 	}
 
@@ -62,6 +64,7 @@ IEnumerator ActivateHUDAfterReload()
 
     public void ShowMenu()
     {
+        Time.timeScale = 0;
         mainMenuPanel.SetActive(true);
         returnButton.SetActive(false); // Hide return button when menu is open
         canvasGroup.alpha = 0; 

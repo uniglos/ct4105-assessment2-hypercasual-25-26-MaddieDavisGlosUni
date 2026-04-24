@@ -26,8 +26,6 @@ public class Fly : MonoBehaviour
         deathAudio = sources[0];
         jumpAudio = sources[1];
         collectAudio = sources[2];
-        //deathAudio = GetComponent<AudioSource>();
-        //jumpAudio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
 
