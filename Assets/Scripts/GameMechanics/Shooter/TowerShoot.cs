@@ -17,7 +17,10 @@ public class TowerShoot : MonoBehaviour
     Rigidbody2D rb2D;
     Rigidbody rb;
 
+    //public AudioSource shootClip;
+
     private void Start() {
+        //shootClip = GetComponent<AudioSource>();
         if (spawnBulletOnStart) {
             SpawnBullet();
         }
@@ -49,6 +52,7 @@ public class TowerShoot : MonoBehaviour
                 rb2D.linearVelocity = -dir * power;
                 currentBullet = null;
                 onShoot.Invoke();
+                //shootClip.Play();
             }
         }
     }

@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject returnButton; // Reference to the return button
     private CanvasGroup canvasGroup;
+    public GameObject player;
 
 void Start()
 	{
@@ -17,6 +18,7 @@ void Start()
     {
         mainMenuPanel.SetActive(false);  
         returnButton.SetActive(true);
+        player.SetActive(true);
         PlayerPrefs.SetInt("Restarted", 0);
         PlayerPrefs.Save();
         
@@ -40,15 +42,15 @@ void Start()
 
 public void RestartGame()
 	{
+        
 		returnButton.SetActive(true);
 		PlayerPrefs.SetInt("Restarted", 1);
-		PlayerPrefs.Save();
-    
+		PlayerPrefs.Save();          
 		Time.timeScale = 1; // Ensure the game unpauses
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
 		// Ensure canvas_HUD is active after the scene reloads
 		StartCoroutine(ActivateHUDAfterReload());
+        
 	}
 
 IEnumerator ActivateHUDAfterReload()
