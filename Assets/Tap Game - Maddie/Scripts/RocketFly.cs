@@ -14,7 +14,8 @@ public class Fly : MonoBehaviour
     public AudioSource collectAudio;
     [SerializeField] private ParticleSystem engineBurst;
     [SerializeField] private ParticleSystem collectBurst;
-    
+    [SerializeField] private FuelBarUI fuelBar;
+
 
 
     private Rigidbody2D rb;
