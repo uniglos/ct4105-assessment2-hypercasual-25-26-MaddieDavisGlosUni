@@ -10,7 +10,7 @@ public class AsteroidIncreaseScore : MonoBehaviour
     {
         collectPoint = GetComponent<AudioSource>();
     }
-
+    //Updates the score when the player passes through the asteroids and plays audio
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

@@ -20,13 +20,14 @@ public class Score : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+   
     private void Start()
     {
         currentScoreText.text = score.ToString();
 
 
     }
-
+    //Increases the score in the UI by 1
     public void UpdateScore()
     {
         score++;

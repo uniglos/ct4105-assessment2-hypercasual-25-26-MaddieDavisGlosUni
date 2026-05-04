@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    //Sets game over screen active and pauses game play
     public void GameOver()
     {
         gameOverCanvas.SetActive(true);
@@ -31,16 +32,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-
+    //Restarts the game - returns to rocket menu
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 
+    //Triggers game over canvas after a set interval, hides part of HUD and pauses game play
     public IEnumerator DelayedGameOver(int delay)
     {
-        //Debug.Log("game over");
+       
         
         yield return new WaitForSeconds(delay);
         gameOverCanvas.SetActive(true);

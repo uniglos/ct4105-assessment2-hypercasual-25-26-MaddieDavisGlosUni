@@ -16,6 +16,7 @@ public class MoveObstacle : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Moves obstacle left at a chosen speed
     void Update()
     {
        

@@ -31,6 +31,8 @@ public class Fly : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Moves rocket up and plays particles and audio on each tap/click
+    //Calls function to decrease fuel with each click
     void Update()
     {
         if (Pointer.current.press.wasPressedThisFrame == true)
@@ -43,12 +45,14 @@ public class Fly : MonoBehaviour
 
     }
 
+    //Rotates rocket in y direction to look like its falling
     private void FixedUpdate()
     {
         transform.rotation = Quaternion.Euler(0, 0, rb.linearVelocity.y * rotationSpeed);
 
     }
 
+    //Plays audio and particle effect when colliding with a fuel pod
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Collectable"))
@@ -59,19 +63,13 @@ public class Fly : MonoBehaviour
         }
     }
 
+    //Plays audio and explosion animation, and triggers game over when rocket collides with asteroids
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-      
-
         deathAudio.Play();
         Instantiate(explosionPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        //Debug.Log("Waiting");
         StartCoroutine(GameManager.instance.DelayedGameOver(1));
-
-
-
-    }
+        }
 
 
 

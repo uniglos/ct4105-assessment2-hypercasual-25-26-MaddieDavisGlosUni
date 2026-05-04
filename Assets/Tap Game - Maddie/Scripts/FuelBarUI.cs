@@ -13,12 +13,15 @@ public class FuelBarUI : MonoBehaviour
     [SerializeField] private Image barColour;
 
   
+    //Copied from tutorial, not entirely sure how the fuel bar works
 
+    //Sets the maxfuel value
     public void SetMaxFuel(float maxFuel)
     {
         MaxFuel = maxFuel;
     }
 
+    //Changes the fuel bar width to match the fuel value
     public void ChangeFuel(float fuelLevel)
     {
         FuelLevel = fuelLevel;
@@ -26,7 +29,7 @@ public class FuelBarUI : MonoBehaviour
 
         fuelBar.sizeDelta = new Vector2(newWidth, height);
     }
-
+    //Sets the fuel bar to start at a certain width, to match the starting fuel level
     public void StartFuel(float fuelStartLevel)
     {
         FuelStartLevel = fuelStartLevel;

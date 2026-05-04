@@ -13,6 +13,7 @@ public class Rotate : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Rotates game object 
     void Update()
     {
         transform.Rotate(new Vector3(0, 0, 1) * rotation * Time.deltaTime, Space.World);

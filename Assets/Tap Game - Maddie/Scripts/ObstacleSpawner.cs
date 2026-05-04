@@ -18,7 +18,7 @@ public class AsteroidSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //SpawnAsteroids();
+        
         SpawnAsteroidsArray();
         
     }
@@ -27,7 +27,7 @@ public class AsteroidSpawner : MonoBehaviour
     {
         if (timer > maxTime)
         {
-            //SpawnAsteroids();
+            
             SpawnAsteroidsArray();
             timer = 0;
         }
@@ -37,7 +37,7 @@ public class AsteroidSpawner : MonoBehaviour
        
 
     }
-
+    //Spawns asteroid prefab within a height range and destroys object after 10seconds
     private void SpawnAsteroids()
     {
         Vector3 spawnPos = transform.position + new Vector3(0, Random.Range(-heightRange, heightRange));
@@ -46,7 +46,7 @@ public class AsteroidSpawner : MonoBehaviour
         Destroy(asteroidBelt, 10f);
 
     }
-
+    //Spawns random asteroid prefab from array within a height range and destroys object after 10seconds
     private void SpawnAsteroidsArray()
     {
         int randomIndex = Random.Range(0, asteroidsArray.Length);

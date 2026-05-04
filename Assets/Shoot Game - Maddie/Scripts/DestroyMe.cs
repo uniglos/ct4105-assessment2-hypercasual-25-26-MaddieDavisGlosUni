@@ -14,9 +14,10 @@ public class DestroyMe : MonoBehaviour
         
     }
 
+    //Destroys game object - used as event in explosion animation
     public void DestroySelf()
     {
         Destroy(gameObject);
-        //Debug.Log("Explosion Destroyed");
+       
     }
 }

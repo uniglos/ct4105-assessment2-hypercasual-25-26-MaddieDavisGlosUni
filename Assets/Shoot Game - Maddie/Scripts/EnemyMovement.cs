@@ -12,11 +12,13 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Enemies move constantly
     void Update()
     {
         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
     }
 
+    //Enemies change direction and move down when they collide with a boundary
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Boundary")

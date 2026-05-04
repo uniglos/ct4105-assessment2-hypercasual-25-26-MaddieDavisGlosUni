@@ -19,7 +19,8 @@ public class ShootBullet : MonoBehaviour
     {
         
     }
-
+    //Plays explosion and audio on collision with enemy
+    //Calls updatescore to increase the score by 10. 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -36,6 +37,7 @@ public class ShootBullet : MonoBehaviour
             //Destroy(gameObject);        
         }
 
+        //Destroys bullet when it hits the boundary
         if (collision.gameObject.tag == "Boundary")
         {
             Destroy(gameObject);

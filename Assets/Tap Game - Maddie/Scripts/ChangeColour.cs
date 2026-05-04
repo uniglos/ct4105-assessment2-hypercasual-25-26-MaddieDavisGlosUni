@@ -11,12 +11,13 @@ public class ChangeColour : MonoBehaviour
         barColour = GetComponent<Image>();
     }
 
+    //Changes the colour of the fuel bar to red
     public void ChangeColourRed()
     {
         
         barColour.color = Color.red;
     }
-
+    //changes the colour of the fuel bar to green
     public void ChangeColourGreen()
     {
         barColour.color = Color.green;

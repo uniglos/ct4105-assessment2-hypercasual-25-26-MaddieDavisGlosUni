@@ -17,6 +17,7 @@ public class FuelSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Spawns a fuel pod at a set interval, timer counts up and resets when each fuel pod spawns
     void Update()
     {
         if (timer > fuelSpawnTime)
@@ -28,6 +29,9 @@ public class FuelSpawner : MonoBehaviour
 
         timer += Time.deltaTime;
     }
+
+    //Instantiates a fuel pod at a random place in a predetermined range
+    //Destroys collectable after 10 seconds
 
     private void SpawnCollectable()
     {

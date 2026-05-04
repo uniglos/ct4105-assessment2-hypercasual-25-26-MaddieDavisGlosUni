@@ -5,6 +5,7 @@ public class FadeText : MonoBehaviour
     public GameObject introText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Starts animation when the game starts
     void Start()
     {
         Instantiate(introText, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity); ;

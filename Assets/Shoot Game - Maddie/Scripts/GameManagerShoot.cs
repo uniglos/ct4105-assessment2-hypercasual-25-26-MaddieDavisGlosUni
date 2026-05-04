@@ -20,6 +20,7 @@ public class GameManagerShoot : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    //Sets the game over screen active and stops the game play
     public void GameOver()
     {
         gameOverCanvas.SetActive(true);
@@ -30,6 +31,7 @@ public class GameManagerShoot : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    //restarts the game - returns to shooter menu screen
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

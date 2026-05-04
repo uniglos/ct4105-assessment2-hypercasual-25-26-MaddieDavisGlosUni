@@ -6,6 +6,7 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] float spawnDelay = 1.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Allows enemies to spawn repeatedly at a set interval
     void Start()
     {
         InvokeRepeating("SpawnEnemies", 0.0f, spawnDelay);
@@ -17,6 +18,7 @@ public class EnemySpawnManager : MonoBehaviour
        
     }
 
+    //Spawns enemies at the position of the spawn manager object
     private void SpawnEnemies()
     {
         Instantiate(enemiesPrefab, transform.position, Quaternion.identity);

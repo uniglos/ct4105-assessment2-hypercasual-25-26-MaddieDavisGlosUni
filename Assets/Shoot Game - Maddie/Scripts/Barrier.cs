@@ -14,6 +14,8 @@ public class Barrier : MonoBehaviour
         
     }
 
+    //Destroys enemy group (parent object) on collision to prevent excess objects in the game
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "EnemyGroup")

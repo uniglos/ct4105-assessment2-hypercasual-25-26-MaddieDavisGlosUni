@@ -28,6 +28,8 @@ public class PlayerLives : MonoBehaviour
     {
         
     }
+    //Triggers explosion animation on collision with city and destroys the UFO
+    //Makes the screen flash and decreases the life count by 1
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -52,13 +54,14 @@ public class PlayerLives : MonoBehaviour
                 }
             
             }
+            //Triggers game over when all lives are lost
             if(lives <= 0)
             {
                 Destroy(gameObject);
                 Destroy(burn2);
                 GameManagerShoot.instance.GameOver();
             }
-
+            //Destroys game objects when lives lost to reveal burning city, activates smoke particles
             if(lives == 2)
             {
                 Instantiate(burning, new Vector3(-15, -2, 1), Quaternion.identity);
