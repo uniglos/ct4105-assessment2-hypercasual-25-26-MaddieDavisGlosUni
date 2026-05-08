@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectableAudio: {fileID: 8388392192713203681}
+  fuelBarAnim: {fileID: 0}
 --- !u!82 &8388392192713203681
 AudioSource:
   m_ObjectHideFlags: 0
