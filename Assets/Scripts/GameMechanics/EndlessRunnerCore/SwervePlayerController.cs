@@ -36,7 +36,7 @@ public class SwervePlayerController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(isGrounded);
+        // Debug.Log(isGrounded);
     }
 
     private void FixedUpdate()
