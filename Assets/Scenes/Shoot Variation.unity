@@ -2662,8 +2662,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84ab90e40f0d6bc44a5a076f6fd58212, type: 2}
-  m_sharedMaterial: {fileID: -5394688882107885933, guid: 84ab90e40f0d6bc44a5a076f6fd58212, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f937355b827d9f418c6d689e05baadb, type: 2}
+  m_sharedMaterial: {fileID: -5394688882107885933, guid: 1f937355b827d9f418c6d689e05baadb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5181,7 +5181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1507380552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6150,8 +6150,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lives: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84ab90e40f0d6bc44a5a076f6fd58212, type: 2}
-  m_sharedMaterial: {fileID: -5394688882107885933, guid: 84ab90e40f0d6bc44a5a076f6fd58212, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f937355b827d9f418c6d689e05baadb, type: 2}
+  m_sharedMaterial: {fileID: -5394688882107885933, guid: 1f937355b827d9f418c6d689e05baadb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6834,7 +6834,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e42e4423407256747b47bcab2787582e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3817f87b4b0a023438f416ea698e7b69, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -7110,7 +7110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6121869962076378919, guid: ba09a2072e0424044aa37750b71e1420, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.61
+      value: -43.83
       objectReference: {fileID: 0}
     - target: {fileID: 6121869962076378919, guid: ba09a2072e0424044aa37750b71e1420, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7174,7 +7174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7498797806897484496, guid: ba09a2072e0424044aa37750b71e1420, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.93
+      value: 7.23
       objectReference: {fileID: 0}
     - target: {fileID: 7498797806897484496, guid: ba09a2072e0424044aa37750b71e1420, type: 3}
       propertyPath: m_LocalPosition.y

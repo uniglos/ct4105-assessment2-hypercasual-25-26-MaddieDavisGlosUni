@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class FuelBarAnim : MonoBehaviour
 {
-    public Animator fuelBarAnim;
+    public Animator animator;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        fuelBarAnim = GetComponent<Animator>();
-        fuelBarAnim.SetBool("collect", false);
+        animator = GetComponent<Animator>();
+        animator.SetBool("collect", false);
     }
 
     // Update is called once per frame
@@ -19,6 +20,12 @@ public class FuelBarAnim : MonoBehaviour
 
     public void PlayFuelAnim()
     {
-        fuelBarAnim.SetBool("collect", true);
+        animator.SetBool("collect", true);
+    }
+
+    public void SetFalse()
+    {
+        animator.SetBool("collect", false);
     }
 }
+

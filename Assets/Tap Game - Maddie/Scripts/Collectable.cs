@@ -5,14 +5,26 @@ using System.Collections.Generic;
 public class Collectable : MonoBehaviour
 {
     public AudioSource collectableAudio;
-    private FuelBarAnim playAnim;
-   
+    private Animator animator;
+    private bool playing;
    
 
     private void Start()
     {
         collectableAudio = GetComponent<AudioSource>();
-        
+        animator = GameObject.Find("Fuel Bar").GetComponent<Animator>();
+        animator.SetBool("collect", false);
+        //playing = false;
+
+    }
+
+    private void Update()
+    {
+        //if(playing)
+        {
+           // animator.SetBool("collect", false);
+            //playing = false;
+        }
     }
 
     //On collision with player the fuel increase and collectable is destroyed
@@ -21,11 +33,15 @@ public class Collectable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            
+            animator.SetBool("collect", true);
+            //playing = true;
             FuelManager.instance.IncreaseFuel();
             Destroy(gameObject);    
 
         }
     }
+
+
+  
 
 }

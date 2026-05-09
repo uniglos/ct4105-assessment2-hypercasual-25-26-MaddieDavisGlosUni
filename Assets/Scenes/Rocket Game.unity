@@ -7468,9 +7468,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 298356ac65bcc7541ad19f665acf3dbd, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9d8d2ff2becfb2b4fbb550bd3299ff6a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7792,7 +7792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febc884dd8aeb414b96a52c613a98764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelBarAnim: {fileID: 901339611}
+  animator: {fileID: 0}
 --- !u!1 &987141407
 GameObject:
   m_ObjectHideFlags: 0
