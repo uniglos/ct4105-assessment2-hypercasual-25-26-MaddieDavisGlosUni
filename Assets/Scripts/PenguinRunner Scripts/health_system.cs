@@ -16,7 +16,7 @@ public class health_system : MonoBehaviour{
 
         for (int i = 0; i < hearts.Length; i++) {
 
-            if (i < numOfHearts){
+            if (i < health){
                 hearts[i].enabled = true;
             }else {
                 hearts[i].enabled = false;
@@ -24,8 +24,17 @@ public class health_system : MonoBehaviour{
         }
     }
 
-    public void SubtractHearts(){
+    public void TakeDamage(GameObject hitObject){
 
-        health--;
+        health = health - 1;
+
+        Destroy(hitObject);
+    }
+
+    public void AddHealth(GameObject hitObject){
+        if (health < numOfHearts) {
+            health = health + 1;
+        }
+        Destroy(hitObject);
     }
 }
