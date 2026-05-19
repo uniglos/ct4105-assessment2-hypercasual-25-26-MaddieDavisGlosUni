@@ -9,6 +9,7 @@ TagManager:
   - EnemyGroup
   - Collectable
   - Coins
+  - IceBlock
   layers:
   - Default
   - TransparentFX
